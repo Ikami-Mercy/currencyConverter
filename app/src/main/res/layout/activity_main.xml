@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/dimens_32">
+
+        <TextView
+            android:id="@+id/tvSendTo"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimens_22"
+            android:text="@string/send_money_to"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvRecipientName"
+            app:layout_constraintEnd_toStartOf="@+id/spCountry"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+        <Spinner
+            android:id="@+id/spCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimens_16"
+            android:entries="@array/country_codes"
+            android:padding="@dimen/dimens_16"
+            app:layout_constraintBottom_toBottomOf="@+id/tvSendTo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@id/tvSendTo"
+            app:layout_constraintTop_toTopOf="@+id/tvSendTo" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvRecipientName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:hint="@string/recipient_name"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tvPhoneNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSendTo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRecipientName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvPhoneNo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_4"
+            android:hint="@string/recipient_phone_number"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tvSendAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCountryCode"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecipientName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhoneNo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvCountryCode"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/tvSendAmount"
+            app:layout_constraintEnd_toStartOf="@+id/tvPhoneNo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRecipientName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCountryCode"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                tools:text="+256"
+                 />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="32dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvReceiveAmount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_8"
+            android:hint="@string/amount_received"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/btnSendAmt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvSendAmount"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etReceiveAmount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                tools:text="0111111111111111 KES" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvSendAmount"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/amount_to_send"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toBottomOf="@+id/tvReceiveAmount"
+            app:layout_constraintEnd_toStartOf="@+id/tvReceiveAmount"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvReceiveAmount">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSendAmount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                tools:text="$ 0" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSendAmt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_16"
+            android:enabled="true"
+            android:padding="@dimen/dimens_12"
+            android:text="@string/send"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/dimens_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvResult" />
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8"
+            android:layout_marginBottom="@dimen/dimens_4"
+            android:textAlignment="viewEnd"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tvResult"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReceiveAmount"
+            tools:text="Unexpected error occurred!" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8"
+            android:textAlignment="center"
+            android:textColor="?android:textColorPrimary"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btnSendAmt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvReceiveAmount"
+            tools:text="Exchange Rate: 1 USD = 123.0 KES" />
+
+        <TextView
+            android:id="@+id/tvInternetError"
+            android:layout_width="@dimen/dimens_0"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/tvSendTo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.42"
+            tools:text="YOU HAVE NO INTERNET CONNECTION" />
+
+        <ProgressBar
+            android:id="@+id/conversionProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimens_8"
+            android:layout_marginTop="@dimen/dimens_4"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnSendAmt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvSendAmount"
+            app:layout_constraintTop_toBottomOf="@+id/tvPhoneNo"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_8"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/btnSendAmt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSendAmount"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

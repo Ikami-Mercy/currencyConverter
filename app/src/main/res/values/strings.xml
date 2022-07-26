@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SimplePay</string>
+    <string name="send_money_to">Send Money To:</string>
+    <string name="recipient_name">Recipient Name</string>
+    <string name="recipient_phone_number">Recipient Phone number</string>
+    <string name="country_code">Code</string>
+    <string name="send">SEND</string>
+    <string name="amount_to_send">Amount to Send</string>
+    <string name="amount_received">Amount Received</string>
+    <string name="required_field">Recipient name is required</string>
+    <string name="phone_required">Recipient phone number is required</string>
+    <string name="amount_required">Amount is required</string>
+    <string name="invalid_name">Please enter a full Recipient name</string>
+    <string name="invalid_phone">Please enter a valid Phone number</string>
+    <string name="long_phone">Please enter a %s digit Phone number</string>
+    <string name="enter_valid_binary_amt">Please enter a valid binary amount.</string>
+    <string name="send_money_success">Sending money was successful!</string>
+    <string name="transaction_sending">Transaction Sending …</string>
+    <string name="check_internet">Please check your internet connection!</string>
+    <string name="ops">Oops...</string>
+
+    <string-array name="country_codes">
+        <item>Kenya</item>
+        <item>Nigeria</item>
+        <item>Tanzania</item>
+        <item>Uganda</item>
+    </string-array>
+</resources>
