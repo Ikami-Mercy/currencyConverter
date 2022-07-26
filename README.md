@@ -13,8 +13,7 @@ To setup the project in your machine:
 
 ### TASK 
 
-The task is a simple app to help launch SimplePay in Binaria .
-SimplePay sends money from Binaria to several countries in Africa (Kenya, Uganda, NNigeria, Tanzania)
+SimplePay simulates sending money from a diaspora country to several countries in Africa (Kenya, Uganda, Nigeria, Tanzania)
 
 ## Architecture
 
