@@ -13,8 +13,8 @@ To setup the project in your machine:
 
 ### TASK 
 
-The task is a simple app to help launch PenguinPay in Binaria .
-Penguin pay sends money from Binaria to several countries in Africa (Kenya, Uganda, NNigeria, Tanzania)
+The task is a simple app to help launch SimplePay in Binaria .
+SimplePay sends money from Binaria to several countries in Africa (Kenya, Uganda, NNigeria, Tanzania)
 
 ## Architecture
 
